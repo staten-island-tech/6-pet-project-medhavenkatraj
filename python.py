@@ -41,7 +41,7 @@ def new_pet():
     my_pet = pet(pet_name)
     print(pet_name,"is such a wonderful name!")
     while True:
-        answer = input(f"{pet_name} ... would you like to play, sleep, eat, or analyze ")
+        answer = input(f"{pet_name} ... would you like to play, sleep, eat, analyze, or quit ")
         if answer == "play":
             my_pet.play +=5
             my_pet.energy +=5
@@ -64,6 +64,8 @@ def new_pet():
             print("ur pet is full! yum! ")
         elif answer == "analyze":
             print(pet_name, "has", str(my_pet.energy), "energy and", str(my_pet.happiness), "happiness")
+        elif answer == "quit":
+            break
         else:
             print("invalid answer, try again ")
             continue
