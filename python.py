@@ -41,7 +41,7 @@ def new_pet():
     my_pet = pet(pet_name)
     print(pet_name,"is such a wonderful name!")
     while True:
-        answer = input(f"{pet_name} ... would you like to play, sleep, eat, analyze stats, or quit. ")
+        answer = input(f"{pet_name} ... would you like to play, sleep, eat, analyze stats, or quit. ").lower().strip()
         if answer == "play":
             my_pet.energy -=5
             my_pet.happiness +=5
@@ -74,3 +74,4 @@ def new_pet():
           
 
 new_pet()
+
