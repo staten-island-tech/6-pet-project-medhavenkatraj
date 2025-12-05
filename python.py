@@ -28,9 +28,9 @@ class pet:
 
 
 class pet():
-    def __init__(self, name, play = 5, happiness = 10, sleep = 5, energy = 10, eat = 5 ):
+    def __init__(self, name, happiness = 10, sleep = 5, energy = 10, eat = 5 ):
         self.name = name
-        self.play = play
+        self.play =5
         self.happiness = happiness
         self.sleep = sleep
         self.energy = energy
@@ -53,7 +53,7 @@ def new_pet():
             my_pet.happiness +=5
             print("+5 energy, +5 happiness")
             print(pet_name, "was so sleepyyy")
-            print("ur pet is well rested! this is the amount of health ur pet is at now. ur pet is eager to playyy")
+            print("ur pet is well rested! ur pet is eager to playyy")
         elif answer == "eat":
             my_pet.energy +=5
             my_pet.happiness -=5
