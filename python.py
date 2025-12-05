@@ -37,38 +37,40 @@ class pet():
         self.eat = eat
 
 def new_pet():
-    pet_name = input("HI, you were recently gifted a new pet dog! pick a name for it! ").lower()
+    pet_name = input("HI, you were recently gifted a new pet dog! pick a name for it! ")
     my_pet = pet(pet_name)
     print(pet_name,"is such a wonderful name!")
     while True:
-        answer = input(f"{pet_name} ... would you like to play, sleep, eat, analyze, or quit ")
+        answer = input(f"{pet_name} ... would you like to play, sleep, eat, analyze stats, or quit. ")
         if answer == "play":
-            my_pet.play +=5
-            my_pet.energy +=5
+            my_pet.energy -=5
             my_pet.happiness +=5
             print(pet_name, "is excited to play!")
-            print(my_pet.play)
-            print("this is the amount of health ur pet it at. ur pet is getting hungry.. ")
+            print("-5 energy, +5 happiness")
+            print("ur pet is getting hungry... eat to raise their energy...or else")
         elif answer == "sleep":
-            my_pet.sleep +=5
             my_pet.energy +=5
             my_pet.happiness +=5
-            print(pet_name, "is so sleepyyy")
-            print(my_pet.sleep)
+            print("+5 energy, +5 happiness")
+            print(pet_name, "was so sleepyyy")
             print("ur pet is well rested! this is the amount of health ur pet is at now. ur pet is eager to playyy")
         elif answer == "eat":
-            my_pet.eat +=5
             my_pet.energy +=5
-            my_pet.happiness +=5
-            print(my_pet.eat)
+            my_pet.happiness -=10
             print("ur pet is full! yum! ")
+            print("+5 energy, -10 happiness")
         elif answer == "analyze":
             print(pet_name, "has", str(my_pet.energy), "energy and", str(my_pet.happiness), "happiness")
+        if my_pet.energy <= 0:
+            print(pet_name, "has died...")
+        if my_pet.happiness <= 0:
+            print(pet_name, "has died...")
         elif answer == "quit":
+            print("bye! that was so fun! come again soon! ")
             break
         else:
             print("invalid answer, try again ")
             continue
-    
+          
 
 new_pet()
